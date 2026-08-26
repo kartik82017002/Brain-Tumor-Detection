@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brain Tumor Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        #preview {
+            display: none;
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 Brain Tumor Detection</h1>
+
+    <p>Select an MRI image</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+
+        <input
+            type="file"
+            name="image"
+            accept="image/*"
+            onchange="previewImage(event)"
+            required
+        >
+
+        <img id="preview">
+
+        <br><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+</div>
+
+<script>
+function previewImage(event) {
+
+    const preview = document.getElementById("preview");
+    const file = event.target.files[0];
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
