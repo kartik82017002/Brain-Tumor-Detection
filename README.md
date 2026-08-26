@@ -43,3 +43,8 @@ Mention where the dataset was taken from, for example a Kaggle brain MRI dataset
 
 ## Acknowledgements
 Built as a learning project to understand how deep learning can be applied to medical imaging problems.
+
+## Model File
+Due to GitHub's file size limit, the trained model is hosted on Google Drive:
+[Download Model](https://drive.google.com/file/d/14DHI6Fi5yC9TJjyAqSflSKsDVw6WXUbg/view?usp=drive_link)
+Download the .keras file and place it inside the flask_app folder before running app.py.
